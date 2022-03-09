@@ -42,18 +42,18 @@ namespace TMS.Ex3
             Console.Write("Введите 2ое число: ");
             int b3 = int.Parse(Console.ReadLine());
             Console.Write("Введите 3ье число: ");
-            int c3 = int.Parse(Console.ReadLine());            
-            if (a3<b3 && b3<c3 && a3<c3)
+            int c3 = int.Parse(Console.ReadLine());
+            if (a3 < b3 && b3 < c3 && a3 < c3)
                 Console.WriteLine($"{a3} -> {b3} -> {c3}");
-            else if (a3 < b3 && b3 > c3 && a3<c3)
+            else if (a3 < b3 && b3 > c3 && a3 < c3)
                 Console.WriteLine($"{a3} -> {c3} -> {b3}");
-            else if (a3 < b3 && b3 > c3 && a3>c3)
+            else if (a3 < b3 && b3 > c3 && a3 > c3)
                 Console.WriteLine($"{c3} -> {a3} -> {b3}");
-            else if (a3 > b3 && b3 < c3 && a3<c3)
+            else if (a3 > b3 && b3 < c3 && a3 < c3)
                 Console.WriteLine($"{b3} -> {a3} -> {c3}");
-            else if (a3 > b3 && b3 < c3 && a3>c3)
+            else if (a3 > b3 && b3 < c3 && a3 > c3)
                 Console.WriteLine($"{b3} -> {c3} -> {a3}");
-            else if (a3 > b3 && b3 > c3 && a3>c3)
+            else if (a3 > b3 && b3 > c3 && a3 > c3)
                 Console.WriteLine($"{c3} -> {b3} -> {a3}");
 
             //Задание 4
@@ -190,6 +190,38 @@ namespace TMS.Ex3
             double c6 = double.Parse(Console.ReadLine());
             if (a6 >= b6 + c6 || b6 >= a6 + c6 || c6 >= a6 + b6)
                 Console.WriteLine("Треугольника с такими сторонами не существует");
+
+            //Задача 7
+            Console.Write("Введите значение x: ");
+            double x7 = double.Parse(Console.ReadLine());
+            double y7 = 0;
+            if (x7 >= -7 && x7 < -6)
+                y7 = -3;
+            else if (x7 >= -6 && x7 < -3)
+                y7 = x7 + 3;
+            else if (x7 >= -3 && x7 < 0)
+                y7 = Math.Sqrt(9 - Math.Pow(x7, 2));
+            else if (x7 >= 0 && x7 < 3)
+                y7 = 3 - x7;
+            else if (x7 >= 3 && x7 <= 6)
+                y7 = x7 - 3;
+            else
+                Console.WriteLine("функция не определена");
+            Console.WriteLine($"f({x7}) = {y7}");
+
+            //Задача 8
+            Console.Write("Введите значение R: ");
+            double r8 = double.Parse(Console.ReadLine());
+            Console.Write("Введите значение X: ");
+            double x8 = double.Parse(Console.ReadLine());
+            Console.Write("Введите значение Y: ");
+            double y8 = double.Parse(Console.ReadLine());
+            if (x8 <= 0 && x8 >= -2 * r8 && y8 <= 0 && y8 >= -2 * r8 && r8 >= (-x8 - y8) / 2)
+                Console.WriteLine("Вы попали");
+            else if (x8 >= r8 && x8 <= 2 * r8 && y8 >= r8 && y8 <= 2 * r8 && r8 >= Math.Sqrt(Math.Pow(x8, 2) + Math.Pow(y8, 2)) / 2)
+                Console.WriteLine("Вы попали");
+            else
+                Console.WriteLine("вы промахнулись");
         }
     }
 }
